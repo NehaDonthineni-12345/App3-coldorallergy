@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Neha Donthineni
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,17 +17,20 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to help users identify whether they have allergies or a cold.
  
 Known Issues:
-blah, blah, blah, blah
+Cold symptions include: fever, sore throat
+Allergy symptions include: watery/itchy eyes, seasonal/chronic symptions
+
+Users will be prompted on whether they have the following symptions. A tally system will add up their responses and give them a diagnosis based on the results.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>CorA</title>  <!-- changed title --> 
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -38,6 +41,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
+	var resultText = document.getElementById("results"); <!-- Results Function store -->
 
 
         function allergyAdd(){
@@ -96,7 +100,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Put Question 1 content here.</p>    
+      		<p>Are your eyes watery or itchy?</p>  <!-- Question 1 content --> 
+		
+		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes </a> <!-- Yes button = Allergy --> 
+		<a href="#two" onclick="coldAdd();"class="w3-btn w3-grey w3-round"> No </a> <!-- No = Cold -->
+		
     	</div>
 </div>
 
@@ -106,7 +114,51 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
+		<p>Do you have a fever?</p> <!-- Question 2 content --> 
+		
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes </a> <!-- Yes button = Cold -->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No </a> <!-- No = Allergy -->
+		
+	</div>
+</div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p> <!-- Question 3 content --> 
+		
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes </a> <!-- Yes = Cold -->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No </a> <!-- No = Allergy -->
+		
+	</div>
+</div>	
+
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal or chronic?</p> <!-- Question 4 content --> 
+		
+		<a href="#results" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes </a> <!-- Yes = Allergy -->
+		<a href="#results" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> No </a> <!-- No = Cold -->
+		
+	</div>
+</div>	
+
+<div class="page" id="results">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Results
+			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+		</p> <!-- text on results page --> 
 	</div>
 </div>	
 
