@@ -46,18 +46,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
-
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
+		alert(cold_count);
         }
 	
-	function alleryPercent(){
-		allergyPercent = (allergy_count/4.0)*100;
+	function allergyPercent(){
+		allergyPercent = (allergy_count/4)*100;
 	}
 	function coldPercent(){
-		coldPercent = (cold_count/4.0)*100;
+		coldPercent = (cold_count/4)*100;
 	}
 	
 	function showResults() {
@@ -171,7 +171,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<button onclick="showResults();">Results</button>
-		<p id = "results"> </p> <!-- text on results page --> 
+		<p id="results"></p> <!-- text on results page --> 
 	</div>
 </div>	
 
