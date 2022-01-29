@@ -41,26 +41,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
-	var total = 4;
+	var total = 4; <!-- used to calculate allergy_count and cold_count -->
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-		alert(allergy_count);
+		alert(allergy_count); <!-- helps keep track of allergy_count -->
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
-		alert(cold_count);
+		alert(cold_count); <!-- helps keep track of cold_count -->
         }
 	
 	function allergyPercent(){
-		allergyPercent = (allergy_count/4)*100;
+		allergyPercent = (allergy_count/4)*100; <!-- function used to calculate % allergy -->
 	}
 	function coldPercent(){
-		coldPercent = (cold_count/4)*100;
+		coldPercent = (cold_count/4)*100; <!-- function used to calculate % cold -->
 	}
 	
-	function showResults() {
+	function showResults() { <!-- function to make sure results would show up on results page -->
 		coldPercent();
 		allergyPercent();
 	
@@ -123,7 +123,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
+		<h1>Question 2</h1> <!-- updated headers for each page to reflect question number -->
 	</div>
 	
 	<div id="content" class="w3-container">
@@ -169,7 +169,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<button onclick="showResults();">Results</button>
+		<button onclick="showResults();">Results</button> <!-- created new results button to click and view % of cold or allergy -->
 		<p id="results"></p> <!-- text on results page --> 
 	</div>
 </div>	
